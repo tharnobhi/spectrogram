@@ -5,10 +5,10 @@ import librosa.display
 import numpy as np
 
 # Set the path to the directory containing the MP3 files
-audio_path = "test audio mp3/"
+audio_path = "test audio mp3/arnob/"
 
 # Initialize the PDF file
-pdf_pages = PdfPages("spectrograms.pdf")
+pdf_pages = PdfPages("spectrograms_first_person.pdf")
 
 # Loop through all the audio files in the directory and generate their spectrograms
 for filename in os.listdir(audio_path):
@@ -22,6 +22,7 @@ for filename in os.listdir(audio_path):
         plt.title(filename)
         plt.tight_layout()
         pdf_pages.savefig()
+        plt.close()
 
 # Close the PDF file
 pdf_pages.close()
